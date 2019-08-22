@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Agenda;
 import modelo.Contacto;
+import modelo.ContactosDAO;
 
 /**
  *
@@ -52,8 +53,11 @@ public class Controlador extends HttpServlet {
             case "AddContact":{
                 String nombreContacto= request.getParameter("Nombre");
                 int telefono= Integer.parseInt(request.getParameter("Telefono"));
-                Contacto c= new Contacto(nombreContacto, telefono);
+                String email= request.getParameter("Email");
+                Contacto c= new Contacto(nombreContacto, telefono, email);
                 agenda1.AgregarContactos(c);
+                ContactosDAO conDAO = new ContactosDAO();
+                conDAO.agregar(c);
                 request.getRequestDispatcher("AddContact.jsp?mensaje="+c.getNombre()).forward(request, response);
             } break;
         }

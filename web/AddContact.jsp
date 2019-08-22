@@ -19,6 +19,8 @@
                 <br>
                 <input type="tel" class="form-control" name="Telefono"placeholder="Telefono" required="required">
                 <br>
+                <input type="email" class="form-control" name="Email"placeholder="Email" required="required">
+                <br>
                 <input type="submit" class="btn btn-info" name="accion" value="AddContact">
             </form>
             <div class="col-6">

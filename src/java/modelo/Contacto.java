@@ -13,10 +13,20 @@ public class Contacto {
     
     String nombre;
     int numero;
+    String email;
 
-    public Contacto(String nombre, int numero) {
+    public Contacto(String nombre, int numero, String email) {
         this.nombre = nombre;
         this.numero = numero;
+    }
+    
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     
